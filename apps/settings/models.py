@@ -9,6 +9,10 @@ class Setting(models.Model):
     description = models.TextField(
         verbose_name="Описание"
     )
+    logo = models.ImageField(
+        upload_to='logo/',
+        blank=True, null = True
+    )
     phone = models.CharField(
         max_length=100,
         verbose_name="Телефонный номер",
