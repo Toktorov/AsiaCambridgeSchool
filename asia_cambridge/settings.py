@@ -37,12 +37,34 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #rest
     'rest_framework',
+
+    #cors
+    'corsheaders',
+
+    #docs
+    'drf_yasg',
 
     #apps
     'apps.settings',
     'apps.teachers',
     'apps.gallery',
+]
+
+#cors config
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:1000",
+    "http://localhost:2000",
+    "http://localhost:3000",
+    "http://localhost:4000",
+    "http://localhost:5000",
+    "http://localhost:6000",
+    "http://localhost:7000",
+    "http://localhost:8000",
+    "http://localhost:9000",
 ]
 
 MIDDLEWARE = [
