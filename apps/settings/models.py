@@ -48,3 +48,41 @@ class Setting(models.Model):
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"
+
+class Progress(models.Model):
+    subject = models.CharField(
+        max_length=255,
+        verbose_name="Достижение"
+    )
+
+    def __str__(self):
+        return self.subject
+    
+    class Meta:
+        verbose_name = "Достижение"
+        verbose_name_plural = "Достижения"
+
+class SchoolHistory(models.Model):
+    subject = models.TextField(
+        verbose_name="История школы"
+    )
+
+    def __str__(self):
+        return self.subject
+    
+    class Meta:
+        verbose_name = "История школы"
+        verbose_name_plural = "История школы"
+
+class AboutSchool(models.Model):
+    subject = models.CharField(
+        max_length=255,
+        verbose_name="О школе"
+    )
+
+    def __str__(self):
+        return self.subject
+
+    class Meta:
+        verbose_name = "О нашей школе"
+        verbose_name_plural = "О нашей школе"
