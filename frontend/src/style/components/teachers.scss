@@ -1,0 +1,15 @@
+.teachers{
+
+  &-card{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid $primeYellow;
+    &-img{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+}
