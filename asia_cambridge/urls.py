@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+from django.views.generic import TemplateView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -35,6 +36,11 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name = 'index.html'), name = "index"),
+    path('about/', TemplateView.as_view(template_name = 'index.html'), name = "about"),
+    path('teachers/', TemplateView.as_view(template_name = 'index.html'), name = "teachers"),
+    path('gallery/', TemplateView.as_view(template_name = 'index.html'), name = "gallery"),
+    path('contact/', TemplateView.as_view(template_name = 'index.html'), name = "contact"),
     path('admin/', admin.site.urls),
     path('api/settings/', include('apps.settings.urls')),
     path('api/', include('apps.teachers.urls')),
