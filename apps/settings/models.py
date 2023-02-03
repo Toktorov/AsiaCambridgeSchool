@@ -86,3 +86,41 @@ class AboutSchool(models.Model):
     class Meta:
         verbose_name = "О нашей школе"
         verbose_name_plural = "О нашей школе"
+
+class News(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заголовок"
+    )
+    description = models.TextField(
+        verbose_name="Описание",
+        blank = True, null = True
+    )
+    image = models.ImageField(
+        upload_to="news_images/",
+        verbose_name="Фотография",
+        blank=True, null=True
+    )
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"
+
+class Class(models.Model):
+    name = models.CharField(
+        max_length=100,
+        verbose_name="Название класса"
+    )
+
+    def __str__(self):
+        return self.name 
+
+    class Meta:
+        verbose_name = "Класс"
+        verbose_name_plural = "Классы"

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.teachers.models import Teacher, Cook
+from apps.teachers.models import Teacher, Cook, Parent
 
 
 class TeacherSerializer(serializers.ModelSerializer):
@@ -10,4 +10,9 @@ class TeacherSerializer(serializers.ModelSerializer):
 class CookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cook
+        fields = "__all__"
+
+class ParentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Parent
         fields = "__all__"
