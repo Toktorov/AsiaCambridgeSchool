@@ -1,4 +1,5 @@
 from django.db import models
+from django_resized.forms import ResizedImageField
 
 # Create your models here.
 class Setting(models.Model):
@@ -54,6 +55,13 @@ class Progress(models.Model):
         max_length=255,
         verbose_name="Достижение"
     )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='gallery_images/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
 
     def __str__(self):
         return self.subject
@@ -65,6 +73,13 @@ class Progress(models.Model):
 class SchoolHistory(models.Model):
     subject = models.TextField(
         verbose_name="История школы"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='gallery_images/',
+        verbose_name="Фотография",
+        blank = True, null = True
     )
 
     def __str__(self):
@@ -78,6 +93,13 @@ class AboutSchool(models.Model):
     subject = models.CharField(
         max_length=255,
         verbose_name="О школе"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='gallery_images/',
+        verbose_name="Фотография",
+        blank = True, null = True
     )
 
     def __str__(self):
@@ -116,6 +138,13 @@ class Class(models.Model):
     name = models.CharField(
         max_length=100,
         verbose_name="Название класса"
+    )
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='gallery_images/',
+        verbose_name="Фотография",
+        blank = True, null = True
     )
 
     def __str__(self):
