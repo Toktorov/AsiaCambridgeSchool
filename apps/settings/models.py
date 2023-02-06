@@ -153,3 +153,16 @@ class Class(models.Model):
     class Meta:
         verbose_name = "Класс"
         verbose_name_plural = "Классы"
+
+class Accreditation(models.Model):
+    pdf_file = models.FileField(
+        upload_to="pdf_files",
+        verbose_name="PDF"
+    )
+
+    def __str__(self):
+        return f"{self.pdf_file}"
+    
+    class Meta:
+        verbose_name = "Аккредитация"
+        verbose_name_plural = "Аккредитации"

@@ -1,5 +1,6 @@
-from apps.settings.models import Setting, Progress, AboutSchool, SchoolHistory, News, Class
-from apps.settings.serializers import SettingSerializer, ProgressSerializer, AboutSchoolSerializer, SchoolHistorySerializer, NewsSerializer, ClassSerializer
+from apps.settings.models import Setting, Progress, AboutSchool, SchoolHistory, News, Class, Accreditation
+from apps.settings.serializers import (SettingSerializer, ProgressSerializer, AboutSchoolSerializer, 
+SchoolHistorySerializer, NewsSerializer, ClassSerializer, AccreditationSerializer)
 from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -26,6 +27,10 @@ class NewsAPIView(ListAPIView):
 class ClassAPIView(ListAPIView):
     queryset = Class.objects.all()
     serializer_class = ClassSerializer
+
+class AccreditationAPIView(ListAPIView):
+    queryset = Accreditation.objects.all()
+    serializer_class = AccreditationSerializer
 
 class SchoolHistoryAPIView(APIView):
     def get(self, request):

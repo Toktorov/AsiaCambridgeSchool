@@ -1,5 +1,6 @@
 from django.urls import path
-from apps.settings.views import SettingAPIView, ProgressAPIView, AboutSchoolAPIView, SchoolHistoryAPIView, NewsAPIView, ClassAPIView
+from apps.settings.views import (SettingAPIView, ProgressAPIView, AboutSchoolAPIView, 
+SchoolHistoryAPIView, NewsAPIView, ClassAPIView, AccreditationAPIView)
 
 
 urlpatterns = [
@@ -9,4 +10,5 @@ urlpatterns = [
     path('history/', SchoolHistoryAPIView.as_view(), name = 'api_history'),
     path('news/', NewsAPIView.as_view(), name = 'api_news'),
     path('class/', ClassAPIView.as_view(), name = 'api_class'),
+    path('accreditation/', AccreditationAPIView.as_view(), name = "api_accreditation")
 ]

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.settings.models import Setting, Progress, AboutSchool, SchoolHistory, News, Class
+from apps.settings.models import Setting, Progress, AboutSchool, SchoolHistory, News, Class, Accreditation
 
 
 class SettingSerializer(serializers.ModelSerializer):
@@ -30,4 +30,9 @@ class NewsSerializer(serializers.ModelSerializer):
 class ClassSerializer(serializers.ModelSerializer):
     class Meta:
         model = Class
+        fields = "__all__"
+
+class AccreditationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Accreditation
         fields = "__all__"
