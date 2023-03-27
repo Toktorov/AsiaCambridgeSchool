@@ -155,9 +155,14 @@ class Class(models.Model):
         verbose_name_plural = "Классы"
 
 class Accreditation(models.Model):
+    title = models.TextField(
+        verbose_name="Название",
+        blank=True, null=True
+    )
     pdf_file = models.FileField(
         upload_to="pdf_files",
-        verbose_name="PDF"
+        verbose_name="PDF",
+        blank=True, null=True
     )
 
     def __str__(self):
