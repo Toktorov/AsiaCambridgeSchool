@@ -41,6 +41,7 @@ urlpatterns = [
     path('teachers/', TemplateView.as_view(template_name = 'index.html'), name = "teachers"),
     path('gallery/', TemplateView.as_view(template_name = 'index.html'), name = "gallery"),
     path('contact/', TemplateView.as_view(template_name = 'index.html'), name = "contact"),
+    path('accreditation/', TemplateView.as_view(template_name = 'index.html'), name = "accreditation"),
     path('admin/', admin.site.urls),
     path('api/settings/', include('apps.settings.urls')),
     path('api/', include('apps.teachers.urls')),

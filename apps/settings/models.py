@@ -166,7 +166,7 @@ class Accreditation(models.Model):
     )
 
     def __str__(self):
-        return f"{self.pdf_file}"
+        return f"{self.title} {self.pdf_file}"
     
     class Meta:
         verbose_name = "Аккредитация"
