@@ -30,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://asiacambridge.edu.kg/",
+  "proxy": "https://asiacambridge.edu.kg/",
   "eslintConfig": {
     "extends": [
       "react-app",

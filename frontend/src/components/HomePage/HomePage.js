@@ -5,13 +5,19 @@ import Teachers from "../Teachers/Teachers";
 import Gallery from "../Gallery/Gallery";
 import Contact from "../Contact/Contact";
 import {useDispatch} from "react-redux";
-import {setPageSate} from "../../redux/reducers/app";
+import {getAllData, setPageSate} from "../../redux/reducers/app";
 
 const HomePage = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(setPageSate())
+        dispatch(setPageSate());
+        getAllData(dispatch);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
     }, []);
     return (
         <main>

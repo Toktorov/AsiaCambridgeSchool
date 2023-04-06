@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Teachers = () => {
     const teachers = useSelector(s => s.app.teachers);
-    const teachersLocal = teachers.length > 3 ? [teachers[0], teachers[1], teachers[2]]: teachers;
+    const teachersLocal = teachers.length > 4 ? [teachers[0], teachers[1], teachers[2], teachers[3]]: teachers;
 
     return (
         <section className={'teachers'}>
@@ -14,10 +14,10 @@ const Teachers = () => {
                     {
                         teachersLocal.map(item =>{
                             return <div key={item.id} className="col-3">
-                                <div className="teachers-card">
-                                    <img src={item.image} alt="" className="teachers-card-img"/>
-                                    <h4 className="teachers-card-name">{item.full_name}</h4>
-                                    <p className="teachers-card-text">Учитель: {item.subject}</p>
+                                <div className="card">
+                                    <img src={item.image} alt="" className="card-img"/>
+                                    <h4 className="card-name">{item.full_name}</h4>
+                                    <p className="card-text">Учитель: {item.subject}</p>
                                 </div>
                             </div>
                         })

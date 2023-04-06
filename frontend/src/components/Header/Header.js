@@ -48,6 +48,29 @@ const Header = () => {
                                      className={pageState === 'contact' ? 'header-active': ''}
                                      to={'/contact'}>Контакты</Link>
                              </li>
+                             <li className="header-menu-li">
+                                 <Link
+                                 onClick={burgerFunc}
+                                 className={pageState === 'news' ? 'header-active' : ''}
+                                 to={'/news'}
+                                 >Новости</Link>
+                             </li>
+
+                             {/*<li className="header-menu-li">*/}
+                             {/*    <Link*/}
+                             {/*        onClick={burgerFunc}*/}
+                             {/*        className={pageState === 'classes' ? 'header-active' : ''}*/}
+                             {/*        to={'/classes'}*/}
+                             {/*    >Классы</Link>*/}
+                             {/*</li>*/}
+
+                             <li className="header-menu-li">
+                                 <Link
+                                     onClick={burgerFunc}
+                                     className={pageState === 'accreditation' ? 'header-active' : ''}
+                                     to={'/accreditation'}
+                                 >Аккредитация</Link>
+                             </li>
                          </ul>
 
                          <div onClick={burgerFunc} className="header-menu-btn">

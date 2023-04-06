@@ -9,7 +9,12 @@ import {setPageSate} from "../../redux/reducers/app";
 const ContactMore = () => {
     const dispatch = useDispatch();
     useEffect(()=>{
-        dispatch(setPageSate())
+        dispatch(setPageSate());
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
     }, []);
     return (
         <section className={'contact mt-50'}>
@@ -19,11 +24,12 @@ const ContactMore = () => {
                     <div className="col-6">
                         <h3 className="subtitle">Наши контакы</h3>
                         <ul className="contact-list list">
-                            <li className="contact-list-item list-item"><a href="#"><FontAwesomeIcon icon={faPhone} /> tel</a></li>
-                            <li className="contact-list-item list-item"><a target={"_blank"} href="#"><FontAwesomeIcon icon={faInstagram} />insta</a></li>
-                            <li className="contact-list-item list-item"><a target={"_blank"} href="#"><FontAwesomeIcon icon={faFacebook} />facebook</a></li>
-                            <li className="contact-list-item list-item"><a target={"_blank"} href="#"><FontAwesomeIcon icon={faWhatsapp} />WA</a></li>
-                            <li className="contact-list-item list-item"><a href="#"><FontAwesomeIcon icon={faEnvelope} />email</a></li>
+                            <li className="contact-list-item list-item"><a href="tel:+996557484839"><FontAwesomeIcon icon={faPhone} /> +996557484839</a></li>
+                            <li className="contact-list-item list-item"><a href="tel:+996773077222"><FontAwesomeIcon icon={faPhone} /> +996773077222</a></li>
+                            <li className="contact-list-item list-item"><a target={"_blank"} href="https://www.instagram.com/asia_cambridge/"><FontAwesomeIcon icon={faInstagram} />asia_cambridge</a></li>
+                            {/*<li className="contact-list-item list-item"><a target={"_blank"} href="#"><FontAwesomeIcon icon={faFacebook} />facebook</a></li>*/}
+                            <li className="contact-list-item list-item"><a target={"_blank"} href="https://wa.me/+996557484839"><FontAwesomeIcon icon={faWhatsapp} />+996557484839</a></li>
+                            <li className="contact-list-item list-item"><a href="mailto:asia.cambridge.osh@mail.ru"><FontAwesomeIcon icon={faEnvelope} />asia.cambridge.osh@mail.ru</a></li>
                         </ul>
                     </div>
 

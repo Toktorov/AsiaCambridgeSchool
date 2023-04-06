@@ -25,7 +25,9 @@ header{
   }
   &-menu{
     display: flex;
-    column-gap: 50px;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 10px;
 
     &-btn{
       display: none;

@@ -8,17 +8,14 @@ import TeachersMore from "./components/Teachers/TeachersMore";
 import GalleryMore from "./components/Gallery/GalleryMore";
 import ContactMore from "./components/Contact/ContactMore";
 import Footer from "./components/Footer/Footer";
-import {useDispatch} from "react-redux";
-import {useEffect} from "react";
-import {getAllData} from "./redux/reducers/app";
+import News from "./components/News/News";
+import ForParents from "./components/ForParents/ForParents";
+import Classes from "./components/Classes/Classes";
+import Accreditation from "./components/Accreditation/Accreditation";
+import ProgressMore from "./components/About/ProgressMore";
 
 
 function App() {
-    const dispatch = useDispatch();
-
-    useEffect(()=>{
-        getAllData(dispatch);
-    }, []);
     return (
         <div>
             <BrowserRouter>
@@ -29,6 +26,11 @@ function App() {
                     <Route path={"/teachers"} element={<TeachersMore/>}/>
                     <Route path={"/gallery"} element={<GalleryMore/>}/>
                     <Route path={"/contact"} element={<ContactMore/>}/>
+                    <Route path={"/news"} element={<News/>}/>
+                    <Route path={"/forParents"} element={<ForParents/>}/>
+                    <Route path={"/classes"} element={<Classes/>}/>
+                    <Route path={"/accreditation"} element={<Accreditation/>}/>
+                    <Route path={"/about/progress/:id"} element={<ProgressMore/>}/>
                 </Routes>
                 <Footer/>
 

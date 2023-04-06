@@ -7,16 +7,22 @@ const SET_PROGRESS = 'SET_PROGRESS';
 const SET_ABOUT = 'SET_ABOUT';
 const SET_HISTORY = 'SET_HISTORY';
 const SET_GALLERY = 'SET_GALLERY';
+const SET_ACCREDITATION = 'SET_ACCREDITATION';
+const SET_NEWS = 'SET_NEWS';
+const SET_PROGRESS_DETAIL = 'SET_PROGRESS_DETAIL';
+const CLEAR_PROGRESS_DETAIL = 'CLEAR_PROFRESS_DETAIL';
 
-const DOMAIN = 'http://asiacambridge.edu.kg/';
+const DOMAIN = 'https://asiacambridge.edu.kg/';
 const serverDocumentation = `${DOMAIN}api/swagger/`;
 const optionServer = `${DOMAIN}api/settings/`;
-const teachersAPI = `/api/teachers/`;
+const teachersAPI = `api/teachers/`;
 const cooksAPI = `/api/cooks/`;
 const progressAPI = `api/settings/progress/`;
 const aboutAPI = `api/settings/about/`;
 const historyAPI = `api/settings/history/`;
 const galleryAPI = `api/gallery`;
+const accreditationAPI = `api/settings/accreditation/`;
+const newsAPI = `api/settings/news/`;
 
 
 const initState = {
@@ -28,6 +34,9 @@ const initState = {
     about: [],
     history:[],
     gallery:[],
+    accreditation: [],
+    news: [],
+    progressDetail: {}
 };
 
 const returnCase = (key, state, action) =>{
@@ -60,6 +69,21 @@ export const app = (state = initState, action) => {
         case SET_HISTORY :{
             return returnCase('history', state, action)
         }
+        case SET_ACCREDITATION :{
+            return  returnCase('accreditation', state, action)
+        }
+        case SET_NEWS :{
+            return  returnCase('news', state, action)
+        }
+        case SET_PROGRESS_DETAIL:{
+            return returnCase('progressDetail', state, action)
+        }
+        case CLEAR_PROGRESS_DETAIL:{
+            return {
+                ...state,
+                progressDetail: {}
+            }
+        }
         default:
             return state
     }
@@ -83,6 +107,22 @@ export const setPageSate = () => {
             }
             case window.location.href.includes('gallery'): {
                 pageState = 'gallery';
+                break
+            }
+            case window.location.href.includes('news'): {
+                pageState = 'news';
+                break
+            }
+            case window.location.href.includes('forParents'): {
+                pageState = 'forParents';
+                break
+            }
+            case window.location.href.includes('classes'): {
+                pageState = 'classes';
+                break
+            }
+            case window.location.href.includes('accreditation'): {
+                pageState = 'accreditation';
                 break
             }
             default : {
@@ -132,6 +172,37 @@ export const getGallery = () =>{
     return getFunction(galleryAPI, SET_GALLERY, 'gallery')
 };
 
+export const getAccreditation = () =>{
+  return getFunction(accreditationAPI, SET_ACCREDITATION, 'accreditation');
+};
+
+export const getNews = () =>{
+  return getFunction(newsAPI, SET_NEWS, 'news');
+};
+
+export const getProgressDetail = (id) =>{
+    return (dispatch) =>{
+        axios.get('/api/settings/progress')
+            .then(({data}) => {
+                let idx = data.findIndex(item =>{
+                    return item.id == id
+                });
+                    return dispatch({type:SET_PROGRESS_DETAIL, progressDetail: data[idx]})
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+};
+
+export const clearProgressDetail = () =>{
+return (dispatch) =>{
+    return dispatch({type: CLEAR_PROGRESS_DETAIL})
+}
+};
+
+
 export const getAllData = (dispatch) =>{
     dispatch(getTeachers());
     dispatch(getCooks());
@@ -139,4 +210,6 @@ export const getAllData = (dispatch) =>{
     dispatch(getProgress());
     dispatch(getHistory());
     dispatch(getGallery());
+    dispatch(getAccreditation());
+    dispatch(getNews());
 };

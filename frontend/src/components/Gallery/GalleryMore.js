@@ -1,14 +1,19 @@
 import React, {useEffect} from 'react';
 import Fancybox from "./Fancybox/Fancybox";
-import img1 from "../../img/gallery/IMG_4834.JPG";
 import {useDispatch, useSelector} from "react-redux";
-import {setPageSate} from "../../redux/reducers/app";
+import {getGallery, setPageSate} from "../../redux/reducers/app";
 
 const GalleryMore = () => {
     const dispatch = useDispatch();
-    const galleryList = useSelector(s => s.app.gallery);
+    const galleryList = useSelector(s => s.app.gallery).reverse();
     useEffect(()=>{
-        dispatch(setPageSate())
+        dispatch(setPageSate());
+        dispatch(getGallery());
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
     }, []);
     return (
         <section className={'gallery mt-50'}>

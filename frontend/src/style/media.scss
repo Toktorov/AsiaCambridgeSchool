@@ -11,23 +11,6 @@
   .col-3{
     width: 33.3%;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 540px;
-  }
-
-  .col-6{
-    width: 100%;
-  }
-  .col-3{
-    width: 50%;
-  }
-
-  .banner{
-    height: 500px;
-  }
 
   .header{
     position: relative;
@@ -56,7 +39,7 @@
       justify-content: center;
       background-color: black;
       padding: 10px 5px;
-      top: 20px;
+      top: -100%;
       transition: .7s;
       column-gap: 30px;
       &-show{
@@ -94,6 +77,27 @@
 
     }
   }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .col-6{
+    width: 100%;
+  }
+  .col-3{
+    width: 50%;
+  }
+
+  .banner{
+    height: 500px;
+  }
+
+
 
 
 }
