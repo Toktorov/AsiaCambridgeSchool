@@ -1,0 +1,124 @@
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+  .col-3{
+    width: 33.3%;
+  }
+
+  .header{
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      top: 0;
+      left: 0;
+      z-index: 6;
+    }
+
+
+
+    &-logo{
+      position: relative;
+      z-index: 7;
+    }
+    &-menu{
+      position: absolute;
+      left: 0;
+      width: 100%;
+      justify-content: center;
+      background-color: black;
+      padding: 10px 5px;
+      top: -100%;
+      transition: .7s;
+      column-gap: 30px;
+      &-show{
+        top: 85px;
+      }
+
+      &-btn{
+        display: flex;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 7;
+        span,
+        span::before,
+        span::after{
+          content: "";
+          position: absolute;
+          height: 5px;
+          width: 100%;
+          background-color: white;
+          display: block;
+        }
+        span{
+          position: relative;
+          &::before{
+            top: -10px;
+          }
+          &::after{
+            bottom: -10px;
+          }
+        }
+      }
+
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .col-6{
+    width: 100%;
+  }
+  .col-3{
+    width: 50%;
+  }
+
+  .banner{
+    height: 500px;
+  }
+
+
+
+
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+    max-width: 100%;
+  }
+  .header-menu{
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .col-3{
+    width: 100%;
+  }
+  .banner{
+    height: 350px;
+  }
+  p,
+  a{
+    font-size: 11px!important;
+  }
+}

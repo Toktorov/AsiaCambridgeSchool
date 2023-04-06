@@ -1,0 +1,49 @@
+
+
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #000000;
+}
+
+.header{
+  padding: 15px 0;
+  border-bottom: 1px solid $primeYellow;
+  &-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-logo{
+    img{
+      height: 50px;
+      object-position: bottom;
+      object-fit: scale-down;
+    }
+  }
+  &-menu{
+    display: flex;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+
+    &-btn{
+      display: none;
+    }
+
+    &-li{
+      list-style-type: none;
+      a{
+        color: white;
+        text-decoration: none ;
+      }
+    }
+  }
+
+  &-active{
+    color: $primeYellow!important;
+  }
+
+}

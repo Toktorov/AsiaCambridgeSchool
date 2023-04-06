@@ -1,0 +1,20 @@
+.contact{
+
+
+  &-img{
+  width: 100%;
+}
+  &-text{
+    margin-bottom: 5px;
+  }
+  &-link{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid $primeYellow;
+    padding: 3px;
+  }
+  &-list-item a{
+    color: white;
+  }
+}

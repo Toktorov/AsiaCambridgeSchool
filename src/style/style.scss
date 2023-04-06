@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+$primeYellow: #be913e;
+$primeGray: #c0c0c0;
+
+body{
+    background-color: black;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+section{
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+
+.col-6{
+    width: 50%;
+    padding: 0 15px;
+}
+
+.col-4{
+    width: 33.3%;
+    padding: 0 15px;
+}
+
+.col-3{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.link-more{
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
+}
+
+.card{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid $primeYellow;
+    min-height: 300px;
+    &-img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+    &-text{
+        color: #ffffff;
+    }
+}
+
+
+
+
+
+.title{
+    color: $primeYellow;
+    margin-bottom: 50px;
+}
+.subtitle{
+    color: $primeGray;
+    margin-bottom: 10px;
+}
+
+.list{
+    margin-top: 10px;
+    &-item{
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+}
+.mt-50{
+    margin-top: 50px;
+}
+
+
+@import "components/header";
+@import "components/banner";
+@import "components/about";
+@import "components/teachers";
+@import "components/gallery";
+@import "components/contact";
+@import "components/footer";
+@import "components/news";
+@import "components/forParents";
+@import "components/clasess";
+@import "media";
